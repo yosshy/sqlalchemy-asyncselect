@@ -6,7 +6,7 @@ Sugar syntax of select/delete functions of SQLAlchemy, especially asyncio.
 In `SQLAlchemy document`_ , the original Asyncio API of SQLAlchemy is like below::
 
     engine = create_async_engine("sqlite:///:memory:")
-    
+
     async with AsyncSession(engine) as session:
         stmt = select(A).options(selectinload(A.bs))
         result = await session.execute(stmt)
@@ -20,7 +20,7 @@ In `SQLAlchemy document`_ , the original Asyncio API of SQLAlchemy is like below
 
 but with this wrapper::
 
-    from sqlalchemy_asyncselect import select, delete
+    from sqlalchemy_asyncselect import select
 
     engine = create_async_engine("sqlite:///:memory:")
 
@@ -39,6 +39,8 @@ And also, deleting row is like below::
         await session.execute(stmt)
 
 but with this wrapper::
+
+    from sqlalchemy_asyncselect import delete
 
     async with AsyncSession(engine) as session:
         await delete(A).filter_by(data="a2").execute(session)
