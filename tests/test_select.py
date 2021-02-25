@@ -13,7 +13,7 @@ try:
     import context
 except:
     from tests import context
-from sqlalchemy_asyncselect import select, delete
+from sqlalchemy_sugar import select, delete
 
 Base = declarative_base()
 

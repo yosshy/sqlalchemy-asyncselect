@@ -3,5 +3,5 @@ init:
 	pip install -r test-requirements.txt
 
 test:
-	black sqlalchemy_asyncselect tests
+	black sqlalchemy_sugar tests
 	nosetests -vv
